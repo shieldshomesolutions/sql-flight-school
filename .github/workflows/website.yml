@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: '22'
       - name: Check lessons, SQL, data and progress
-        run: node --test --test-isolation=none tests/*.test.mjs
+        run: node --test tests/*.test.mjs
       - name: Prepare only public website assets
         run: node scripts/prepare-site.mjs
       - name: Upload website artifact
