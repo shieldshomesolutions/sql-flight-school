@@ -1,0 +1,11 @@
+{
+  "name": "sql-flight-school",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A local-first aviation SQL learning prototype",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test --test-isolation=none tests/*.test.mjs"
+  }
+}

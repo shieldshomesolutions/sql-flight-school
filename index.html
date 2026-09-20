@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1219">
+  <meta name="description" content="Learn SQL through aviation operations. A safe, local training environment with Tower as your coach.">
+  <title>SQL Flight School</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e1b25'/%3E%3Cpath d='M16 4l3 10 9 6v3l-10-3v6l3 2v2l-5-1-5 1v-2l3-2v-6-0l-10 3v-3l9-6z' fill='%238fe6c0'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div id="app"><main id="main" class="onboarding"><section class="onboarding-card"><p class="eyebrow">SQL FLIGHT SCHOOL</p><h1>Preparing your training environment</h1><p>Loading the aviation database. Everything runs here in your browser.</p></section></main></div>
+  <div id="modal-root"></div>
+  <div id="notification" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript>SQL Flight School needs JavaScript enabled to run the training database in your browser.</noscript>
+  <script>
+    if (location.protocol === 'file:') {
+      document.getElementById('app').innerHTML = '<main id="main" class="onboarding"><section class="onboarding-card"><p class="eyebrow">SQL FLIGHT SCHOOL / LOCAL STARTUP</p><h1>Start with the launcher.</h1><p>You opened the page directly from its folder. To load your training database, first double-click <strong>Launch SQL Flight School.cmd</strong> in this same folder.</p><p>The launcher starts the app and opens your browser. Keep its window open while you learn.</p><p>If the launcher is already running:</p><a class="button primary" href="http://127.0.0.1:4173">Open Flight School →</a><p class="form-help">No installation or online account is needed on this computer.</p></section></main>';
+    } else {
+      import('./src/app.js').catch(function(error) {
+        document.querySelector('#app h1').textContent = 'The training app could not load.';
+        document.querySelector('#app p:last-child').textContent = 'Refresh the page. If this continues, check that the complete app folder is present and start the local launcher again.';
+        console.error(error);
+      });
+    }
+  </script>
+</body>
+</html>
